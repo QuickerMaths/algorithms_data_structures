@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(Algorithms)
 
-set(ALGORITHMS dec2bin bin2dec)
+set(ALGORITHMS dec2bin bin2dec fibonacci)
 
 set(SELECTED_ALGO "" CACHE STRING "Select algorithm to build (${ALGORITHMS})")
 
@@ -13,14 +13,11 @@ if(NOT SELECTED_ALGO IN_LIST ALGORITHMS)
     message(FATAL_ERROR "Invalid algorithm selected. Choose from: ${ALGORITHMS}")
 endif()
 
-# Automatically detect all source files in the selected algorithm folder
 file(GLOB SOURCES algorithms/${SELECTED_ALGO}/*.cpp)
 
-# Ensure sources were found
 if(NOT SOURCES)
     message(FATAL_ERROR "No source files found for ${SELECTED_ALGO}. Check if the folder and .cpp files exist.")
 endif()
 
-# Add the selected algorithm as an executable
 add_executable(${SELECTED_ALGO} algorithms/${SELECTED_ALGO}/${SELECTED_ALGO}.cpp)
 
