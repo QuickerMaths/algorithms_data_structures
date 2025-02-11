@@ -7,4 +7,4 @@ In case of LSB 2^0, until it reaches 'Most Significant Bit' (MSB), which has a w
 
 ## Block diagram
 
-![bin2dec algorithm block diagram](../../bin2dec.png)
+![bin2dec algorithm block diagram](../../images/bin2dec.png)
