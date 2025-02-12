@@ -12,6 +12,7 @@ Algorithm can be optimalized by changing a way of how the pivot is chossen. Most
 Choosing a random pivot or a median of three random elements.
 
 Time complexity: best case scenario O(n log(n)), worst case scenario O(n^2)
+
 Space complexity: best case scenrio O(n), worst case scenario O(log(n))
 
 ## Block diagram
