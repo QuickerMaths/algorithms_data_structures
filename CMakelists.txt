@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(Algorithms)
 
-set(ALGORITHMS dec2bin bin2dec fibonacci bubble_sort)
+set(ALGORITHMS dec2bin bin2dec fibonacci bubble_sort selection_sort insertion_sort)
 
 set(SELECTED_ALGO "" CACHE STRING "Select algorithm to build (${ALGORITHMS})")
 
