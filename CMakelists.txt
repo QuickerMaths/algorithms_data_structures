@@ -1,23 +1,30 @@
 cmake_minimum_required(VERSION 3.10)
-project(Algorithms)
+project(MyProject)
 
-set(ALGORITHMS dec2bin bin2dec fibonacci bubble_sort selection_sort insertion_sort quick_sort merge_sort)
+# Define source directories
+set(ALGORITHMS_DIR ${CMAKE_SOURCE_DIR}/algorithms)
+set(DATA_DIR ${CMAKE_SOURCE_DIR}/data_structures)
 
-set(SELECTED_ALGO "" CACHE STRING "Select algorithm to build (${ALGORITHMS})")
+# Automatically detect source files
+file(GLOB_RECURSE SOURCES ${ALGORITHMS_DIR}/*.cpp ${DATA_DIR}/*.cpp)
 
-if(NOT SELECTED_ALGO)
-    message(FATAL_ERROR "You must specify a SELECTED_ALGO. Available options: ${ALGORITHMS}")
+# Allow the user to select a target
+if(NOT DEFINED SELECTED_TARGET)
+    message(FATAL_ERROR "Please define SELECTED_TARGET from the available sources.")
 endif()
 
-if(NOT SELECTED_ALGO IN_LIST ALGORITHMS)
-    message(FATAL_ERROR "Invalid algorithm selected. Choose from: ${ALGORITHMS}")
+# Verify and create the selected executable
+set(TARGET_SOURCES "")
+foreach(SOURCE_FILE ${SOURCES})
+    get_filename_component(TARGET_NAME ${SOURCE_FILE} NAME_WE)
+    if(SELECTED_TARGET STREQUAL TARGET_NAME)
+        set(TARGET_SOURCES ${SOURCE_FILE})
+    endif()
+endforeach()
+
+if(TARGET_SOURCES)
+    add_executable(${SELECTED_TARGET} ${TARGET_SOURCES})
+else()
+    message(FATAL_ERROR "Invalid SELECTED_TARGET: ${SELECTED_TARGET}. Please choose a valid file.")
 endif()
-
-file(GLOB SOURCES algorithms/${SELECTED_ALGO}/*.cpp)
-
-if(NOT SOURCES)
-    message(FATAL_ERROR "No source files found for ${SELECTED_ALGO}. Check if the folder and .cpp files exist.")
-endif()
-
-add_executable(${SELECTED_ALGO} algorithms/${SELECTED_ALGO}/${SELECTED_ALGO}.cpp)
 
