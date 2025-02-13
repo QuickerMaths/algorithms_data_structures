@@ -9,4 +9,4 @@ Merge sort is a recursive algorithm, it splits the given table into equal parts 
 
 ## Block diagram
 
-![merge sort algorithm block diagram](../../images/merge_sort)
+![merge sort algorithm block diagram](../../images/merge_sort.png)
