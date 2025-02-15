@@ -1,10 +1,13 @@
-# fibonacci
+# Fibonacci Sequence
 
-Two implementations of algorithm calculating elements of fibonacci's sequence.
+## Overview
 
-First solution is done by using iteration of a for loop.
- 
-Second solution is done by using recursion.
+This project implements two different approaches to calculate Fibonacci sequence elements:  
+1. **Iterative Method** (using a loop)  
+2. **Recursive Method** (using function calls)
+
+## What is the Fibonacci Sequence?
+The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones:  
 
 ## Block diagram
 
