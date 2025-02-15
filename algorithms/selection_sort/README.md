@@ -1,8 +1,14 @@
-# selection_sort
+# Selection Sort Algorithm
 
-Implementation of selection sort algorithm.
+## Overview
 
-Selection sort looks for the index of the element with the smallest or the largest value (smallest in this implementation) and then swaps found element with the "i" index.
+This project implements the **Selection Sort** algorithm, a simple comparison-based sorting technique.
+
+## How It Works
+
+1. **Find the smallest element** in the unsorted portion of the array.
+2. **Swap** it with the element at the current index (`i`).
+3. **Move to the next index** and repeat the process until the array is fully sorted.
 
 **Time complexity:** O(n^2)
 
