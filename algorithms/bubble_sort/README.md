@@ -15,11 +15,9 @@ This project implements the **Bubble Sort** algorithm, a simple sorting techniqu
 - Introduced a **swap flag** that tracks whether any swaps occurred during the last iteration.
 - If no swaps are made, the array is already sorted, and the algorithm stops early, improving efficiency.
 
-## Complexity Analysis
-- **Time Complexity:**  
-  - Worst & Average Case: **O(n²)** (nested loops)
-  - Best Case (already sorted): **O(n)** (with optimization)
-- **Space Complexity:** **O(1)** (in-place sorting)
+**Time complexity:** O(n^2) 
+
+**Space complexity:** O(1)
 
 ## Block diagram
 
